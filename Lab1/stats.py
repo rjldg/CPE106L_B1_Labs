@@ -13,7 +13,7 @@ n = int(input("Enter 1 to get MODE, 2 to get MEAN, 3 to get MEDIAN: "))
 print(*l)
 
 funcs = {
-    1: mode(l),
+    #1: mode(l),
     2: mean(l),
     3: median(l)
 }
