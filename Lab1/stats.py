@@ -1,11 +1,11 @@
-def median(arr):
-    arr = sorted(arr)
-    if(len(arr) == 0):
-        return 0
-    elif(len(arr) % 2 != 0):
-        return arr[int(len(arr) / 2)]
-    else:
-        return (arr[int(len(arr) / 2) - 1] + arr[int(len(arr) / 2)]) / 2
+
+def mean(l):
+    sum = 0
+    for i in l:
+        sum += i
+    
+    ans = sum / len(l)
+    return(ans)
 
 l = list(map(int, input("Enter list: ").split()))
 n = int(input("Enter 1 to get MODE, 2 to get MEAN, 3 to get MEDIAN: "))
