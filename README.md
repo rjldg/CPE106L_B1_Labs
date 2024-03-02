@@ -2,9 +2,9 @@
  
 > A Github Repository for Software Design Laboratory Course (CPE106L) that contains all laboratory exercises, projects, and the like.
 
-### **:keyboard: Collaborators / Group Members:**
+### **:busts_in_silhouette: Collaborators / Group Members:**
 * **@github/azra-dev** (ANONAS, Azrael)
-* **@github/rjldg** (DE GUZMAN, Rance Jacob) - TEAM LEAD
+* **@github/rjldg** (DE GUZMAN, Rance Jacob) - *TEAM LEAD*
 * **@github/Summercado** (MERCADO, Godwyn Summer) 
 
 ### **:white_check_mark: To-Implement Checklist**
