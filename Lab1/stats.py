@@ -1,3 +1,4 @@
+
 def mean(l):
     sum = 0
     for i in l:
@@ -5,7 +6,7 @@ def mean(l):
     
     ans = sum / len(l)
     return(ans)
-    
+
 l = list(map(int, input("Enter list: ").split()))
 n = int(input("Enter 1 to get MODE, 2 to get MEAN, 3 to get MEDIAN: "))
 
