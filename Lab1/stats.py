@@ -15,7 +15,26 @@ def median(arr):
         return arr[int(len(arr) / 2)]
     else:
         return (arr[int(len(arr) / 2) - 1] + arr[int(len(arr) / 2)]) / 2
+    
+'''
+def mode(arr):
+    mx = -1
+    tempSet = set(arr)
+    sameNum = False
 
+    for i in tempSet:
+        c = arr.count(i)
+        if(c > mx):
+            mx = c
+            temp = arr[i]
+        elif(c == mx):
+            sameNum = True
+    
+    if sameNum:
+        return -1
+    
+    return temp
+'''
 def mode(l):
     return max(set(l), key=l.count)
 
