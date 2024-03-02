@@ -1,3 +1,5 @@
+def mode(l):
+    # lorem ipsum
 
 
 l = list(map(int, input("Enter list: ").split()))
