@@ -1,5 +1,5 @@
 def mode(l):
-    print(max(set(l), key=l.count))
+    return max(set(l), key=l.count)
 
 """
 def mean(l):
