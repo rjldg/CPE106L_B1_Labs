@@ -1,37 +1,47 @@
 import random
+import os.path
 
-articles = ("A", "THE")
+def getWords(fn):
 
-nouns = ("BOY", "GIRL", "BAT", "BALL")
+    while not os.path.isfile(fn):
+        fn = input("Enter EXISTING filename: ")
 
-verbs = ("HIT", "SAW", "LIKED")
+    with open(fn, 'r') as inf:
 
-prepositions = ("WITH", "BY")
+        words = inf.read()
+
+        return tuple(list(words.split()))
+
+articles, nouns, verbs, prepositions = (getWords(input("Enter filename for {}: ".format(lbl))) for lbl in ["articles", "nouns", "verbs", "prepositions"])
 
 def sentence():
-    """Builds and returns a sentence."""
     return nounPhrase() + " " + verbPhrase()
 
 def nounPhrase():
-    """Builds and returns a noun phrase."""
     return random.choice(articles) + " " + random.choice(nouns)
 
 def verbPhrase():
-    """Builds and returns a verb phrase."""
     return random.choice(verbs) + " " + nounPhrase() + " " + \
            prepositionalPhrase()
 
 def prepositionalPhrase():
-    """Builds and returns a prepositional phrase."""
     return random.choice(prepositions) + " " + nounPhrase()
+
 
 def main():
     """Allows the user to input the number of sentences
     to generate."""
-    number = int(input("Enter the number of sentences: "))
-    for count in range(number):
-        print(sentence())
 
+    number = int(input("\nEnter the number of sentences (0 to quit): "))
+
+    while number != 0:
+
+        for count in range(number):
+            print(sentence())
+
+        number = int(input("\nEnter the number of sentences (0 to quit): "))
+
+    
 # The entry point for program execution
 if __name__ == "__main__":
     main()
