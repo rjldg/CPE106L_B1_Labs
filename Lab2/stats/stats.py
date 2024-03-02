@@ -17,7 +17,7 @@ funcs = {
 
 for index, func in funcs.items():
     if(index == n):
-        if(func == -1):
-            print("No Mode.")
+        if isinstance(func, list):
+            print("Multiple Modes:", func)
         else:
             print(f"Ans: {func:.2f}")
