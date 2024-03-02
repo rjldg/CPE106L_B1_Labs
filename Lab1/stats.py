@@ -1,11 +1,14 @@
 def mode(l):
     return max(set(l), key=l.count)
 
-"""
 def mean(l):
-    print("lorem ipsum")
-"""
-
+    sum = 0
+    for i in l:
+        sum += i
+    
+    ans = sum / len(l)
+    return(ans)
+    
 def median(arr):
     arr = sorted(arr)
     if(len(arr) == 0):
@@ -23,7 +26,7 @@ print(*l)
 
 funcs = {
     1: mode(l),
-    # 2: mean(l),
+    2: mean(l),
     3: median(l)
 }
 
