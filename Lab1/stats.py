@@ -1,6 +1,11 @@
 def mode(l):
-    # lorem ipsum
+    print(max(set(l), key=l.count))
 
+def mean(l):
+    print("lorem ipsum")
+
+def median(l):
+    print("lorem ipsum")
 
 l = list(map(int, input("Enter list: ").split()))
 n = int(input("Enter 1 to get MODE, 2 to get MEAN, 3 to get MEDIAN: "))
