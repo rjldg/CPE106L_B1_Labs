@@ -1,57 +1,64 @@
-
-def mean(l):
-    sum = 0
-    for i in l:
-        sum += i
-    
-    ans = sum / len(l)
-    return(ans)
+def mean(arr):
+    value = 0
+    for num in arr:
+        value += num
+    return '{0:.2f}'.format((value/len(arr)))
 
 def median(arr):
     arr = sorted(arr)
-    if(len(arr) == 0):
-        return 0
-    elif(len(arr) % 2 != 0):
-        return arr[int(len(arr) / 2)]
+    if len(arr) % 2 == 1:
+        value = arr[int((len(arr)-1)/2)]
     else:
-        return (arr[int(len(arr) / 2) - 1] + arr[int(len(arr) / 2)]) / 2
-    
-'''
+        value = (arr[int((len(arr))/2)] + arr[int((len(arr)/2) - 1)])/2
+    return '{0:.2f}'.format(value)
+
 def mode(arr):
-    mx = -1
-    tempSet = set(arr)
-    sameNum = False
+    num_frequency = {}
 
-    for i in tempSet:
-        c = arr.count(i)
-        if(c > mx):
-            mx = c
-            temp = arr[i]
-        elif(c == mx):
-            sameNum = True
+    # sort frequency
+    for num in arr:
+        exist_status = False
+        if len(num_frequency) > 0:
+            for key, v in num_frequency.items():
+                if num == key:
+                    num_frequency.update({key: v+1})
+                    exist_status = True
+                    break
+        if not exist_status:
+            num_frequency.update({num: 1})
+
+    # get max frequency
+    value = []
+    max_freq = 1
+    for key, v in num_frequency.items():
+        if v > max_freq:
+            max_freq = v
+            value = [key]
+        elif v == max_freq and v != 1:
+            value.append(key)
+
+    if len(value) == 0:
+        value = "N/A"
+    else:
+        value = ', '.join(str(result) for result in value)
     
-    if sameNum:
-        return -1
-    
-    return temp
-'''
-def mode(l):
-    return max(set(l), key=l.count)
+    return value
 
-l = list(map(int, input("Enter list: ").split()))
-n = int(input("Enter 1 to get MODE, 2 to get MEAN, 3 to get MEDIAN: "))
+arr = list(map(int, input("Enter a list of number separated by spaces: ").split()))
 
-print(*l)
-
-funcs = {
-    1: mode(l),
-    2: mean(l),
-    3: median(l)
+stat_func_dict = {
+    "mean": mean(arr),
+    "median": median(arr),
+    "mode": mode(arr),
 }
 
-for index, func in funcs.items():
-    if(index == n):
-        if(func == -1):
-            print("No Mode.")
-        else:
-            print(f"Ans: {func:.2f}")
+valid_status = False
+while not valid_status:
+    stat_treatment = input("Enter statistical treatment to be applied (mean, median, mode) : ")
+    for treatment, stat_func in stat_func_dict.items():
+        if treatment == str.lower(stat_treatment):
+            print(f"The {str.lower(stat_treatment)} of the given list is: {stat_func}")
+            valid_status = True
+            break
+    if not valid_status:
+        print("Invalid input.")

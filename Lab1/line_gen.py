@@ -1,9 +1,7 @@
 from faker import Faker
+faker_obj = Faker()
+generated_sentences = [faker_obj.sentence() for _ in range(50)]
 
-faker = Faker()
-
-sentences = [faker.sentence() for _ in range(50)]   # prints 50 randomly generated sentences
-
-with open("essay.txt", "w") as file:
-    for sentence in sentences:
+with open("lines.txt", "w") as file:
+    for sentence in generated_sentences:
         file.write(sentence + '\n')

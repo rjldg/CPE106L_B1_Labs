@@ -1,28 +1,20 @@
-fn = input("Enter filename: ")
-
-infile = open(fn, 'r')
-
+file_input = input("Enter file name: ")
+infile = open(file_input, 'r')
 lines = []
 
-
-print("\nFile contents: ")
-
 for line in infile:
-        lines.append(line[:-1])
-        print(line[:-1])
-print(end='\n')
+    lines.append(line[:-1])
+    print(line[:-1])
 
-print("There are {} lines in the file".format(len(lines)), '\n')
+print(end="\n")
 
-ln = int(input("Enter line number between 1-{} (0 to exit): ".format(len(lines))))
-
-while ln != 0:
-
-    if ln <= len(lines):
-
-        # print("\nThere are {} lines in the file".format(len(lines)))
-        print("\nLINE {}: ".format(ln), end="")
-
-        print(lines[ln - 1] + "\n")
-
-    ln = int(input("Enter line number between 1-{} (0 to exit): ".format(len(lines))))
+gatekeep_status = True
+while gatekeep_status:
+    line_num = int(input(f"Enter a line number (1-{len(lines)}) to retrieve the text. (0 to exit) : "))
+    if line_num == 0:
+        exit("Program terminated with exit code: 0")
+    elif line_num > 0 and line_num <= len(lines):
+        print(f"Line {line_num}: {lines[line_num-1]}")
+    else:
+        print("Invalid line number.")
+    print(end="\n")
