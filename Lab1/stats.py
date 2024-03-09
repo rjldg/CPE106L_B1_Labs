@@ -1,6 +1,8 @@
 def mean(arr):
     value = 0
-    return value
+    for num in arr:
+        value += num
+    return '{0:.2f}'.format((value/len(arr)))
 
 def median(arr):
     value = 0
@@ -23,7 +25,7 @@ while not valid_status:
     stat_treatment = input("Enter statistical treatment to be applied (mean, median, mode) : ")
     for treatment, stat_func in stat_func_dict.items():
         if treatment == str.lower(stat_treatment):
-            print(f"valid: {str.lower(stat_treatment)}")
+            print(f"The {str.lower(stat_treatment)} of the given list is: {stat_func}")
             valid_status = True
             break
     if not valid_status:
