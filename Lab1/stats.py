@@ -5,8 +5,12 @@ def mean(arr):
     return '{0:.2f}'.format((value/len(arr)))
 
 def median(arr):
-    value = 0
-    return value
+    arr = sorted(arr)
+    if len(arr) % 2 == 1:
+        value = arr[int((len(arr)-1)/2)]
+    else:
+        value = (arr[int((len(arr))/2)] + arr[int((len(arr)/2) - 1)])/2
+    return '{0:.2f}'.format(value)
 
 def mode(arr):
     value = 0
