@@ -1,57 +1,13 @@
-
-def mean(l):
-    sum = 0
-    for i in l:
-        sum += i
-    
-    ans = sum / len(l)
-    return(ans)
+def mean(arr):
+    value = 0
+    return value
 
 def median(arr):
-    arr = sorted(arr)
-    if(len(arr) == 0):
-        return 0
-    elif(len(arr) % 2 != 0):
-        return arr[int(len(arr) / 2)]
-    else:
-        return (arr[int(len(arr) / 2) - 1] + arr[int(len(arr) / 2)]) / 2
-    
-'''
+    value = 0
+    return value
+
 def mode(arr):
-    mx = -1
-    tempSet = set(arr)
-    sameNum = False
+    value = 0
+    return value
 
-    for i in tempSet:
-        c = arr.count(i)
-        if(c > mx):
-            mx = c
-            temp = arr[i]
-        elif(c == mx):
-            sameNum = True
-    
-    if sameNum:
-        return -1
-    
-    return temp
-'''
-def mode(l):
-    return max(set(l), key=l.count)
-
-l = list(map(int, input("Enter list: ").split()))
-n = int(input("Enter 1 to get MODE, 2 to get MEAN, 3 to get MEDIAN: "))
-
-print(*l)
-
-funcs = {
-    1: mode(l),
-    2: mean(l),
-    3: median(l)
-}
-
-for index, func in funcs.items():
-    if(index == n):
-        if(func == -1):
-            print("No Mode.")
-        else:
-            print(f"Ans: {func:.2f}")
+arr = list(map(int, input("Enter a list of number separated by spaces: ").split()))
