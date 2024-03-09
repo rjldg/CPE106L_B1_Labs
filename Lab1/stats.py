@@ -13,7 +13,35 @@ def median(arr):
     return '{0:.2f}'.format(value)
 
 def mode(arr):
-    value = 0
+    num_frequency = {}
+
+    # sort frequency
+    for num in arr:
+        exist_status = False
+        if len(num_frequency) > 0:
+            for key, v in num_frequency.items():
+                if num == key:
+                    num_frequency.update({key: v+1})
+                    exist_status = True
+                    break
+        if not exist_status:
+            num_frequency.update({num: 1})
+
+    # get max frequency
+    value = []
+    max_freq = 1
+    for key, v in num_frequency.items():
+        if v > max_freq:
+            max_freq = v
+            value = [key]
+        elif v == max_freq and v != 1:
+            value.append(key)
+
+    if len(value) == 0:
+        value = "N/A"
+    else:
+        value = ', '.join(str(result) for result in value)
+    
     return value
 
 arr = list(map(int, input("Enter a list of number separated by spaces: ").split()))
