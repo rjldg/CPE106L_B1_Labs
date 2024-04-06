@@ -3,7 +3,7 @@
 > A Github Repository for Software Design Laboratory Course (CPE106L) that contains all laboratory exercises, projects, and the like.
 
 ### **:busts_in_silhouette: Collaborators / Group Members:**
-* **@github/azra-dev** (ANONAS, Azrael)
+* **@github/azra-dev** (ANONAS, Azrael) - https://mymailmapuaedu-my.sharepoint.com/:f:/g/personal/acanonas_mymail_mapua_edu_ph/Es4tizUH9xVLsctRTAJYysoBMfvjKGI5V_qI5tKEArb9ew?e=2Q8KDe
 * **@github/rjldg** (DE GUZMAN, Rance Jacob) - *TEAM LEAD*
 * **@github/Summercado** (MERCADO, Godwyn Summer) 
 
