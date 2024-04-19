@@ -1,0 +1,21 @@
+-- For each participant, list his or her number, first name, and the class number, class descripton, and the date of the class for each class in which the participant is enrolled
+
+SELECT 
+Ps.participant_id,
+Ps.last_name,
+Ps.first_name,
+ACs.class_no,
+ACs.description,
+ACs.start_date
+FROM Participants AS Ps INNER JOIN AdventureClasses AS ACs ON Ps.participant_id = ACs.participant_id;
+
+-- For each class, list the class date, class number, and class description; and the number, last name and first name of each participant in the class_no
+
+SELECT 
+ACs.start_date,
+ACs.class_no,
+ACs.description,
+Ps.participant_id,
+Ps.last_name,
+Ps.first_name
+FROM Participants AS Ps INNER JOIN AdventureClasses AS ACs ON Ps.participant_id = ACs.participant_id;
