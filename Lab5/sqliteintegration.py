@@ -1,4 +1,12 @@
-import sqlalchemy as sql
-import pandas as pd
+import sqlite3
 
-# engine_create = sql.create_engine('sqlite:////home/stephen/db1.db')
+conn = sqlite3.connect('ColonialAdventureToursDB.db')
+
+cursor = conn.cursor()
+
+cursor.execute("SELECT * FROM CUSTOMER;")
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+print('\t\tFigure 1. CUSTOMERS Table from ColonialAdventureToursDB')
