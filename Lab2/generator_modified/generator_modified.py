@@ -12,7 +12,10 @@ def getWords(fn):
 
         return tuple(list(words.split()))
 
-articles, nouns, verbs, prepositions = (getWords(input("Enter filename for {}: ".format(lbl))) for lbl in ["articles", "nouns", "verbs", "prepositions"])
+articles = getWords("articles.txt")
+nouns = getWords("nouns.txt")
+verbs = getWords("verbs.txt")
+prepositions = getWords("prepositions.txt")
 
 def sentence():
     return nounPhrase() + " " + verbPhrase()
