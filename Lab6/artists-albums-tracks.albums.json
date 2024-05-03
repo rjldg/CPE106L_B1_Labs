@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "6634d5451b021cc289648a55"
+  },
+  "AlbumId": 1,
+  "Title": "Purpose",
+  "ArtistId": "6634bfab1b021cc2896489da"
+},
+{
+  "_id": {
+    "$oid": "6634d5451b021cc289648a56"
+  },
+  "AlbumId": 2,
+  "Title": "Believe",
+  "ArtistId": "6634bfab1b021cc2896489da"
+},
+{
+  "_id": {
+    "$oid": "6634d55e1b021cc289648a57"
+  },
+  "AlbumId": 3,
+  "Title": "Scorpion",
+  "ArtistId": "6634bfab1b021cc2896489db"
+},
+{
+  "_id": {
+    "$oid": "6634d55e1b021cc289648a58"
+  },
+  "AlbumId": 4,
+  "Title": "Views",
+  "ArtistId": "6634bfab1b021cc2896489db"
+}]
